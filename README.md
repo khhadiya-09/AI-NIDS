@@ -116,10 +116,11 @@ Model Comparison
      │
      ▼
 Final Deployment Model
-     │
-     └── Random Forest
----
-## 📈 Key Research Findings
+│
+└── Random Forest
+```
+
+## 🔬 Key Research Findings
 ### 1. Random Splits Can Produce Extremely Optimistic Results
 Under a leakage-controlled random group split, the Random Forest binary classifier achieved:
 Metric	Score
