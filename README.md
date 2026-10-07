@@ -118,9 +118,10 @@ Model Comparison
 Final Deployment Model
      │
      └── Random Forest
+     ```
 
-📈 Key Research Findings
-1. Random Splits Can Produce Extremely Optimistic Results
+## 📈 Key Research Findings
+### 1. Random Splits Can Produce Extremely Optimistic Results
 Under a leakage-controlled random group split, the Random Forest binary classifier achieved:
 Metric	Score
 Accuracy	99.80%
@@ -132,7 +133,7 @@ PR-AUC	99.82%
 
 
 However, this performance changed substantially when an entire DDoS scenario was held out from training.
-2. Unseen DDoS Generalization
+### 2. Unseen DDoS Generalization
 When the complete Friday Afternoon DDoS scenario was excluded from training, the Random Forest achieved:
 Metric	Score
 Accuracy	79.27%
@@ -147,7 +148,7 @@ The model therefore maintained very high precision but missed a substantial port
 36.50% of DDoS traffic was missed.
 This demonstrates the difference between high benchmark performance and genuine scenario generalization.
 
-3. Small Amounts of Attack Exposure Can Dramatically Improve Generalization
+### 3. Small Amounts of Attack Exposure Can Dramatically Improve Generalization
 A controlled DDoS exposure experiment investigated whether introducing a small representative subset of DDoS traffic into training could improve detection.
 DDoS Exposure	Recall
 0%	63.50%
@@ -159,7 +160,7 @@ DDoS Exposure	Recall
 Introducing only 1% representative DDoS exposure improved recall by approximately 36.29 percentage points.
 This experiment highlights the importance of representative attack diversity in the training data.
 
-🤖 Multiclass Detection
+## 🤖 Multiclass Detection
 The final multiclass experiment used seven classes and a leakage-controlled validation strategy.
 The final Random Forest achieved:
 Metric	Score
@@ -182,7 +183,7 @@ Bot	72.60%	94.40%	82.08%
 
 
 
-🕵️ Minority-Class Analysis: Bot Traffic
+## 🕵️ Minority-Class Analysis: Bot Traffic
 Bot traffic presented a particularly interesting minority-class detection problem.
 The final model achieved:
 - 94.40% Bot recall
@@ -195,7 +196,7 @@ The experiments showed that increasing Bot representation in training substantia
 However, increasing sensitivity also introduced false positives where benign traffic was classified as Bot.
 This demonstrates an important practical trade-off between minority-class recall and false-positive control.
 
-⚖️ Model Comparison
+## ⚖️ Model Comparison
 Two tree-based machine-learning approaches were evaluated:
 - Random Forest
 - XGBoost
@@ -208,14 +209,14 @@ XGBoost	99.87%	96.99%	78.63%	82.07%
 Final Model Selection
 Random Forest was retained as the deployment model because it provided substantially higher Bot recall while maintaining strong overall multiclass performance.
 
-🔥 Final Confusion Matrix
+## 🔥 Final Confusion Matrix
 The final evaluation revealed strong separation between most classes.
 The largest attack-to-benign error was:
 5,110 DoS samples classified as BENIGN
 
 This highlights an important limitation of aggregate accuracy: a model can achieve excellent overall performance while still producing a meaningful number of misses for a particular attack category.
 
-🖥️ Streamlit Dashboard
+## 🖥️ Streamlit Dashboard
 The project includes an interactive Streamlit dashboard for model inference and evaluation.
 The dashboard supports:
 - CSV upload
@@ -228,7 +229,7 @@ The dashboard supports:
 - Confusion matrix visualization
 - Prediction filtering
 - CSV result export
-Run locally
+Run Locally
 Create and activate the virtual environment:
 python -m venv .venv
 
@@ -242,7 +243,7 @@ Run the dashboard:
 streamlit run dashboard/app.py
 
 The application will open in your browser.
-📁 Repository Structure
+## 📁 Repository Structure
 AI-NIDS/
 │
 ├── dashboard/
@@ -271,13 +272,13 @@ AI-NIDS/
 ├── requirements.txt
 └── README.md
 
-⚠️ Limitations
+## ⚠️ Limitations
 - CIC-IDS2017 is a benchmark dataset and may not fully represent modern production network environments.
 - Dataset-specific patterns can make machine-learning models appear more generalizable than they actually are.
 - The unseen-scenario experiment focused specifically on DDoS traffic.
 - Minority-class results can be sensitive to the amount and diversity of available training examples.
 - The current deployment model is trained on CIC-IDS2017 features and therefore requires compatible network-flow feature extraction for real-world deployment.
-🔮 Future Work
+## 🔮 Future Work
 Potential extensions include:
 - Evaluation on additional modern intrusion-detection datasets.
 - Cross-dataset generalization experiments.
@@ -312,3 +313,15 @@ Cybersecurity | Network Security | AI Security | IoT Security
 This project emphasizes that reliable intrusion detection evaluation should not rely solely on aggregate accuracy.
 Instead, robust NIDS research should consider:
 data representation → leakage control → scenario generalization → minority-class detection → class-specific metrics
+
+### One VERY important thing
+
+When you paste this version, **do not add any extra ` ``` ` at the beginning or end**.
+
+The README should literally start with:
+
+```text
+# AI-Based Network Intrusion Detection System (AI-NIDS)
+
+and end with:
+**data representation → leakage control → scenario generalization → minority-class detection → class-specific metrics**
