@@ -120,6 +120,8 @@ Final Deployment Model
 └── Random Forest
 ```
 
+---
+
 ## 🔬 Key Research Findings
 ### 1. Random Splits Can Produce Extremely Optimistic Results
 Under a leakage-controlled random group split, the Random Forest binary classifier achieved:
@@ -159,7 +161,9 @@ DDoS Exposure	Recall
 
 Introducing only 1% representative DDoS exposure improved recall by approximately 36.29 percentage points.
 This experiment highlights the importance of representative attack diversity in the training data.
+
 ---
+
 ## 🤖 Multiclass Detection
 The final multiclass experiment used seven classes and a leakage-controlled validation strategy.
 The final Random Forest achieved:
@@ -183,6 +187,7 @@ Bot	72.60%	94.40%	82.08%
 
 
 ---
+
 ## 🕵️ Minority-Class Analysis: Bot Traffic
 Bot traffic presented a particularly interesting minority-class detection problem.
 The final model achieved:
@@ -195,6 +200,7 @@ The model detected:
 The experiments showed that increasing Bot representation in training substantially improved Bot recall.
 However, increasing sensitivity also introduced false positives where benign traffic was classified as Bot.
 This demonstrates an important practical trade-off between minority-class recall and false-positive control.
+
 ---
 
 ## ⚖️ Model Comparison
@@ -209,13 +215,16 @@ XGBoost	99.87%	96.99%	78.63%	82.07%
 
 Final Model Selection
 Random Forest was retained as the deployment model because it provided substantially higher Bot recall while maintaining strong overall multiclass performance.
+
 ---
+
 ## 🔥 Final Confusion Matrix
 The final evaluation revealed strong separation between most classes.
 The largest attack-to-benign error was:
 5,110 DoS samples classified as BENIGN
 
 This highlights an important limitation of aggregate accuracy: a model can achieve excellent overall performance while still producing a meaningful number of misses for a particular attack category.
+
 ---
 
 ## 🖥️ Streamlit Dashboard
@@ -245,7 +254,9 @@ Run the dashboard:
 streamlit run dashboard/app.py
 
 The application will open in your browser.
+
 ---
+
 ## 📁 Repository Structure
 AI-NIDS/
 │
@@ -274,6 +285,7 @@ AI-NIDS/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+
 ---
 
 ## ⚠️ Limitations
@@ -282,7 +294,9 @@ AI-NIDS/
 - The unseen-scenario experiment focused specifically on DDoS traffic.
 - Minority-class results can be sensitive to the amount and diversity of available training examples.
 - The current deployment model is trained on CIC-IDS2017 features and therefore requires compatible network-flow feature extraction for real-world deployment.
+
 ---
+
 ## 🔮 Future Work
 Potential extensions include:
 - Evaluation on additional modern intrusion-detection datasets.
