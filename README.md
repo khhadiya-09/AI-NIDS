@@ -142,6 +142,7 @@ However, this performance changed substantially when an entire DDoS scenario was
 ### 2. Unseen DDoS Generalization
 
 When the complete Friday Afternoon DDoS scenario was excluded from training, the Random Forest achieved:
+
 | Metric | Score |
 |---|---:|
 | Accuracy | **79.27%** |
@@ -151,14 +152,18 @@ When the complete Friday Afternoon DDoS scenario was excluded from training, the
 | ROC-AUC | **93.79%** |
 | PR-AUC | **95.01%** |
 
-
 The model therefore maintained very high precision but missed a substantial portion of the unseen DDoS traffic.
-36.50% of DDoS traffic was missed.
+
+**36.50% of DDoS traffic was missed.**
+
 This demonstrates the difference between high benchmark performance and genuine scenario generalization.
+
+![Generalization shift](results/figures/01_generalization_shift.png)
 
 ### 3. Small Amounts of Attack Exposure Can Dramatically Improve Generalization
 
 A controlled DDoS exposure experiment investigated whether introducing a small representative subset of DDoS traffic into training could improve detection.
+
 | DDoS Exposure | Recall |
 |---|---:|
 | 0% | **63.50%** |
@@ -166,9 +171,11 @@ A controlled DDoS exposure experiment investigated whether introducing a small r
 | 2% | **99.82%** |
 | 5% | **99.88%** |
 
+Introducing only **1% representative DDoS exposure** improved recall by approximately **36.29 percentage points**.
 
-Introducing only 1% representative DDoS exposure improved recall by approximately 36.29 percentage points.
 This experiment highlights the importance of representative attack diversity in the training data.
+
+![DDoS exposure ablation](results/figures/03_ddos_exposure_ablation.png)
 
 ---
 
@@ -185,7 +192,8 @@ The final Random Forest achieved:
 | Weighted F1 | **98.93%** |
 
 
-Per-Class Performance
+### Per-Class Performance
+
 | Class | Precision | Recall | F1 |
 |---|---:|---:|---:|
 | BENIGN | 98.83% | 99.09% | 99.36% |
@@ -196,23 +204,29 @@ Per-Class Performance
 | Web Attack | 99.29% | 98.35% | 98.78% |
 | Bot | 72.60% | **94.40%** | 82.08% |
 
+![Multiclass performance](results/figures/04_multiclass_per_class.png)
 
 ---
 
 ## 🕵️ Minority-Class Analysis: Bot Traffic
 
 Bot traffic presented a particularly interesting minority-class detection problem.
-The final model achieved:
-- 94.40% Bot recall
-- 72.60% Bot precision
-- 82.08% Bot F1
-The model detected:
-371 / 393 Bot samples
 
-The experiments showed that increasing Bot representation in training substantially improved Bot recall.
-However, increasing sensitivity also introduced false positives where benign traffic was classified as Bot.
+The final model achieved:
+
+- **94.40% Bot recall**
+- **72.60% Bot precision**
+- **82.08% Bot F1**
+
+The model detected:
+
+**371 / 393 Bot samples**
+
+The experiments showed that increasing Bot representation in training substantially improved Bot recall. However, increasing sensitivity also introduced false positives where benign traffic was classified as Bot.
+
 This demonstrates an important practical trade-off between minority-class recall and false-positive control.
 
+![Bot exposure](results/figures/05_bot_exposure.png)
 ---
 
 ## ⚖️ Model Comparison
@@ -229,9 +243,11 @@ XGBoost achieved stronger aggregate performance in the final comparison, but Ran
 | Random Forest | **98.96%** | **96.01%** | **94.40%** | **82.08%** |
 | XGBoost | **99.87%** | **96.99%** | **78.63%** | **82.07%** |
 
+### Final Model Selection
 
-Final Model Selection
 Random Forest was retained as the deployment model because it provided substantially higher Bot recall while maintaining strong overall multiclass performance.
+
+![Model comparison](results/figures/02_model_comparison.png)
 
 ---
 
