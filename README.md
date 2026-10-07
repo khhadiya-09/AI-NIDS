@@ -258,6 +258,8 @@ The application will open in your browser.
 ---
 
 ## 📁 Repository Structure
+
+```text
 AI-NIDS/
 │
 ├── dashboard/
@@ -285,6 +287,7 @@ AI-NIDS/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
@@ -309,7 +312,10 @@ Potential extensions include:
 - Evaluation on IoT-specific network traffic.
 - Integration with SIEM/SOC workflows.
 - Deployment as a real-time detection service.
-🛠️ Technologies
+
+---
+
+## 🛠️ Technologies
 - Python
 - Scikit-learn
 - XGBoost
@@ -320,14 +326,23 @@ Potential extensions include:
 - Streamlit
 - Joblib
 - CIC-IDS2017
-📚 Dataset Reference
+
+---
+
+## 📚 Dataset Reference
 Sharafaldin, I., Lashkari, A. H., & Ghorbani, A. A.
 Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization.
 International Conference on Information Systems Security and Privacy (ICISSP), 2018.
-👩‍💻 Author
+
+---
+
+## 👩‍💻 Author
 Hadiya Khan
 Computer Science and Engineering(IOT, Cybersecurity and Blockchain technolgy)
 Cybersecurity | Network Security | AI Security 
+
+---
+
 ## ⭐ Project Focus
 This project emphasizes that reliable intrusion detection evaluation should not rely solely on aggregate accuracy.
 Instead, robust NIDS research should consider:
