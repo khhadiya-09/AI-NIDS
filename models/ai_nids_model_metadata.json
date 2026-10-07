@@ -1,0 +1,30 @@
+{
+  "project": "AI-Based Network Intrusion Detection System",
+  "model_name": "Random Forest - Experiment H",
+  "model_type": "RandomForestClassifier",
+  "experiment": "H",
+  "n_estimators": 100,
+  "n_features": 70,
+  "classes": [
+    "BENIGN",
+    "Bot",
+    "Brute Force",
+    "DDoS",
+    "DoS",
+    "PortScan",
+    "Web Attack"
+  ],
+  "bot_threshold": 0.5,
+  "dataset": "CIC-IDS2017",
+  "evaluation_type": "Leakage-controlled multiclass evaluation",
+  "final_metrics": {
+    "accuracy": 0.9896,
+    "macro_precision": 0.9572,
+    "macro_recall": 0.9705,
+    "macro_f1": 0.9601,
+    "weighted_f1": 0.9893,
+    "bot_precision": 0.726,
+    "bot_recall": 0.944,
+    "bot_f1": 0.8208
+  }
+}
