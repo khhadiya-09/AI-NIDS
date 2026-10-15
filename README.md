@@ -22,6 +22,13 @@ Try the deployed AI-Based Network Intrusion Detection System:
 Upload a CIC-IDS2017-style CSV file to classify network traffic into benign traffic and six attack categories. The dashboard provides prediction summaries, visualizations, evaluation metrics, confusion matrix analysis, filtering, and CSV export.
 
 ---
+## 📄 Research Report
+
+The technical research report documents the AI-NIDS methodology, CIC-IDS2017 dataset audit, experimental results, model comparisons, and limitations.
+
+📘 **[Read the AI-NIDS Technical Research Report](report/AI_NIDS_Technical_Research_Report.pdf)**
+
+---
 
 ## 🎯 Objectives
 
