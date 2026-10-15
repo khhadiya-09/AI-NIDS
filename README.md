@@ -13,6 +13,15 @@ The project evaluates how the representation of attack traffic in training data 
 Rather than relying only on conventional random train-test splits, this project includes **scenario-aware and leakage-controlled experiments** to investigate whether high benchmark performance translates into reliable detection when attack scenarios are poorly represented or completely unseen during training.
 
 ---
+## 🚀 Live Demo
+
+Try the deployed AI-Based Network Intrusion Detection System:
+
+🔗 **[Launch AI-NIDS Dashboard](https://ai-nids-cybersecurity.streamlit.app/)**
+
+Upload a CIC-IDS2017-style CSV file to classify network traffic into benign traffic and six attack categories. The dashboard provides prediction summaries, visualizations, evaluation metrics, confusion matrix analysis, filtering, and CSV export.
+
+---
 
 ## 🎯 Objectives
 
