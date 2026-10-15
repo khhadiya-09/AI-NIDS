@@ -26,8 +26,8 @@ Upload a CIC-IDS2017-style CSV file to classify network traffic into benign traf
 
 The technical research report documents the AI-NIDS methodology, CIC-IDS2017 dataset audit, experimental results, model comparisons, and limitations.
 
-📘 **[Read the AI-NIDS Technical Research Report](report/AI_NIDS_Technical_Research_Report)**
 
+📘 **[Read the AI-NIDS Technical Research Report](./report/AI_NIDS_Technical_Research_Report.pdf)**
 ---
 
 ## 🎯 Objectives
